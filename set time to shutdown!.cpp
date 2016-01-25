@@ -5,7 +5,6 @@
 int main()
 {
 	int t,m;
-	int count=0;
 
 	printf("1.Shutdown PC\n");
 	printf("2.Restart PC\n");
@@ -13,12 +12,19 @@ int main()
 	scanf("%d",&m);
 	printf("\nSet Timer in second: ");
 	scanf("%d",&t);
-	while(count<=t)
+	while(t!=0)
 	{
-		system("cls");
-		printf("%d sec",count);
-		count++;
-		Sleep(1000);
+		switch(m)
+		{
+		case 1:	system("cls");
+				printf("This PC will Shut Down in %d sec",t);
+				t--;
+				Sleep(1000);break;
+		case 2:	system("cls");
+				printf("This PC will Restart in %d sec",t);
+				t--;
+				Sleep(1000);
+		}
 	}
 
 	switch(m)
